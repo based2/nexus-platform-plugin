@@ -102,7 +102,7 @@ class IqPolicyEvaluatorSlaveIntegrationTest
     when: 'the build is scheduled'
       project.definition = new CpsFlowDefinition("node ('${slave.getNodeName()}') {\n" +
           "writeFile file: 'dummy.txt', text: 'dummy'\n" +
-          "nexusPolicyEvaluation failBuildOnNetworkError: false, iqApplication: 'app' , iqStage: 'stage'\n" +
+          "nexusPolicyEvaluation failBuildOnNetworkError: false, iqApplication: 'app', iqStage: 'stage'\n" +
           "}\n")
       def build = project.scheduleBuild2(0).get()
 

@@ -12,8 +12,10 @@
  */
 package org.sonatype.nexus.ci.iq
 
+import org.jenkinsci.plugins.workflow.job.WorkflowJob
 import org.junit.Rule
 import org.jvnet.hudson.test.JenkinsRule
+import spock.lang.Ignore
 import spock.lang.Specification
 
 class PipelineSyntaxIntegrationTest
@@ -22,4 +24,15 @@ class PipelineSyntaxIntegrationTest
   @Rule
   public JenkinsRule jenkins = new JenkinsRule()
 
+  @Ignore // Pipeline syntax page doesn't seem to exist for Jenkins 1.x
+  def 'Pipeline syntax page should load successfully'() {
+    given: 'a pipleline project'
+      WorkflowJob project = jenkins.createProject(WorkflowJob)
+
+    when: 'the pipeline syntax page is loaded'
+      def pipelineSyntax = jenkins.createWebClient().getPage(project, 'pipeline-syntax')
+
+    then: 'the sample step is present'
+      pipelineSyntax.getFirstByXPath('//select/option[@value=\'nexusPolicyEvaluation: Invoke Nexus Policy Evaluation\']')
+  }
 }
