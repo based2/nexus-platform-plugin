@@ -35,6 +35,7 @@ import org.jenkinsci.plugins.workflow.cps.CpsFlowDefinition
 import org.jenkinsci.plugins.workflow.job.WorkflowJob
 import org.junit.Rule
 import org.jvnet.hudson.test.JenkinsRule
+import spock.lang.Ignore
 import spock.lang.Specification
 import spock.lang.Unroll
 
@@ -68,6 +69,7 @@ class IqPolicyEvaluatorIntegrationTest
     iqClientBuilder.build() >> iqClient
   }
 
+  @Ignore // declarative pipeline requires jenkins 2.x
   def 'Declarative pipeline build successful with mandatory parameters'() {
     given: 'a jenkins project'
       WorkflowJob project = jenkins.createProject(WorkflowJob)

@@ -54,7 +54,7 @@
 
   <properties>
     <enforcer.skip>true</enforcer.skip> <!-- TODO numerous requireUpperBoundDeps, some probably indicative of real problems -->
-    <jenkins.version>2.7</jenkins.version>
+    <jenkins.version>1.625.3</jenkins.version>
     <findbugs-maven-plugin.version>3.0.2</findbugs-maven-plugin.version>
     <jvnet-localizer-plugin.version>1.23</jvnet-localizer-plugin.version>
     <forkCount>1</forkCount>
@@ -119,7 +119,7 @@
       <dependency>
         <groupId>org.jenkins-ci.plugins.workflow</groupId>
         <artifactId>workflow-step-api</artifactId>
-        <version>2.8</version>
+        <version>1.14.2</version>
       </dependency>
 
       <dependency>
@@ -242,35 +242,84 @@
     <dependency>
       <groupId>org.jenkins-ci.plugins.workflow</groupId>
       <artifactId>workflow-job</artifactId>
-      <version>2.9</version>
+      <version>1.14.2</version>
       <scope>test</scope>
     </dependency>
 
     <dependency>
       <groupId>org.jenkins-ci.plugins.workflow</groupId>
       <artifactId>workflow-cps</artifactId>
-      <version>2.24</version>
+      <version>1.14.2</version>
       <scope>test</scope>
     </dependency>
 
     <dependency>
       <groupId>org.jenkins-ci.plugins.workflow</groupId>
       <artifactId>workflow-basic-steps</artifactId>
-      <version>2.3</version>
+      <version>1.14.2</version>
       <scope>test</scope>
     </dependency>
 
     <dependency>
       <groupId>org.jenkins-ci.plugins.workflow</groupId>
       <artifactId>workflow-durable-task-step</artifactId>
-      <version>2.8</version>
+      <version>1.14.2</version>
       <scope>test</scope>
     </dependency>
 
     <dependency>
+      <groupId>org.jenkins-ci.plugins</groupId>
+      <artifactId>durable-task</artifactId>
+      <version>1.5</version>
+      <scope>test</scope>
+    </dependency>
+
+    <!--<dependency>
       <groupId>org.jenkinsci.plugins</groupId>
       <artifactId>pipeline-model-definition</artifactId>
       <version>1.2.7</version>
+      <scope>test</scope>
+    </dependency>-->
+
+    <dependency>
+      <groupId>org.jenkins-ci.plugins.workflow</groupId>
+      <artifactId>workflow-cps-global-lib</artifactId>
+      <version>1.14.2</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.jenkins-ci.plugins.workflow</groupId>
+      <artifactId>workflow-scm-step</artifactId>
+      <version>1.14.2</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.jenkins-ci.plugins</groupId>
+      <artifactId>scm-api</artifactId>
+      <version>1.0</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.jenkins-ci.plugins.workflow</groupId>
+      <artifactId>workflow-api</artifactId>
+      <version>1.14.2</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.jenkins-ci.plugins.workflow</groupId>
+      <artifactId>workflow-support</artifactId>
+      <version>1.14.2</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.jenkins-ci.plugins</groupId>
+      <artifactId>git-client</artifactId>
+      <version>1.19.0</version>
       <scope>test</scope>
     </dependency>
 

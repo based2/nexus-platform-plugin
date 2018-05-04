@@ -14,19 +14,35 @@ package org.sonatype.nexus.ci.iq
 
 import com.sonatype.nexus.api.iq.ApplicationPolicyEvaluation
 
+import groovy.transform.InheritConstructors
 import hudson.AbortException
 
 class PolicyEvaluationException
-    extends AbortException
+    extends Exception
 {
   private final ApplicationPolicyEvaluation policyEvaluation
+
+  private final String message
 
   public ApplicationPolicyEvaluation getPolicyEvaluation() {
     return policyEvaluation
   }
 
   public PolicyEvaluationException(String message, ApplicationPolicyEvaluation policyEvaluation) {
-    super(message)
+    this.message = message
     this.policyEvaluation = policyEvaluation
+  }
+
+  @Override
+  String getMessage() {
+    return message
+  }
+
+  @Override
+  void printStackTrace(final PrintStream s) {
+  }
+
+  @Override
+  void printStackTrace(final PrintWriter s) {
   }
 }

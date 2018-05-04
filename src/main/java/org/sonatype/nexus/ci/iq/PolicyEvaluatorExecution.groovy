@@ -22,11 +22,11 @@ import hudson.Launcher
 import hudson.model.Run
 import hudson.model.TaskListener
 import org.jenkinsci.plugins.workflow.steps.StepContext
-import org.jenkinsci.plugins.workflow.steps.SynchronousNonBlockingStepExecution
+import org.jenkinsci.plugins.workflow.steps.AbstractSynchronousNonBlockingStepExecution
 
 @SuppressWarnings('UnnecessaryTransientModifier')
 class PolicyEvaluatorExecution
-    extends SynchronousNonBlockingStepExecution<ApplicationPolicyEvaluation>
+    extends AbstractSynchronousNonBlockingStepExecution<ApplicationPolicyEvaluation>
 {
   @Inject
   private transient IqPolicyEvaluatorWorkflowStep iqPolicyEvaluator
